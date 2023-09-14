@@ -94,17 +94,22 @@ namespace YYC_Audio
             {
                 return;
             }
+
             // channel A
+            var channelASubFreq = channelA.Freq;
             var channelAStrongHex = channelA.Strong.ToString("X4");
             var channelAFreqHex = channelA.Freq.ToString("X2");
-            string channelAHex = $"35110101{channelAStrongHex}11{channelAFreqHex}32";
+            var channelASubFreqHex = channelASubFreq.ToString("X2");
+            string channelAHex = $"35110101{channelAStrongHex}11{channelAFreqHex}{channelASubFreqHex}";
             var writerA = new DataWriter();
             writerA.WriteBytes(StringToByteArray(channelAHex));
 
             // channel B
+            var channelBSubFreq = channelA.Freq;
             var channelBStrongHex = channelB.Strong.ToString("X4");
             var channelBFreqHex = channelB.Freq.ToString("X2");
-            string channelBHex = $"35110201{channelBStrongHex}11{channelBFreqHex}32";
+            var channelBSubFreqHex = channelBSubFreq.ToString("X2");
+            string channelBHex = $"35110201{channelBStrongHex}11{channelBFreqHex}{channelBSubFreqHex}";
             var writerB = new DataWriter();
             writerB.WriteBytes(StringToByteArray(channelBHex));
 

@@ -71,6 +71,7 @@ namespace YYC_Audio
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.deviceBox);
             this.Controls.Add(this.actButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainFrame";
             this.Text = "YYC-Audio";
             this.Load += new System.EventHandler(this.MainFrame_Load);
